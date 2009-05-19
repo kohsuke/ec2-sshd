@@ -1,0 +1,165 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jvnet.ec2-sshd</groupId>
+  <artifactId>ec2-sshd</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>SSHD for EC2 Windows</name>
+  <description>SSH daemon implementation for EC2 Windows instances</description>
+
+  <scm>
+    <connection>scm:svn:https://svn.dev.java.net/svn/ec2-sshd/trunk/ec2-sshd/</connection>
+    <developerConnection>scm:svn:https://svn.dev.java.net/svn/ec2-sshd/trunk/ec2-sshd/</developerConnection>
+  </scm>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+      <!--plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>attached</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <descriptorId>jar-with-dependencies</descriptorId>
+              <archive>
+                <manifest>
+                  <mainClass>org.jvnet.ec2sshd.Main</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin-->
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib</classpathPrefix>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <phase>generate-resources</phase>
+            <configuration>
+              <includeScope>compile</includeScope>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.jvnet.maven-antrun-extended-plugin</groupId>
+        <artifactId>maven-antrun-extended-plugin</artifactId>
+        <version>1.39</version>
+        <executions>
+          <execution>
+            <id>resgen</id>
+            <phase>package</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <verifyArtifact>false</verifyArtifact>
+              <tasks>
+                <!-- assemble the distribution -->
+                <mkdir dir="target/dist/lib" />
+                <copy todir="target/dist/lib">
+                  <fileset dir="target/dependency" includes="*.jar" />
+                </copy>
+                <resolveArtifact groupId="com.sun.winsw" artifactId="winsw" version="1.6" classifier="bin" type="exe"
+                                 tofile="target/dist/ec2-sshd.exe" />
+                <copy todir="target/dist" file="src/ec2-sshd.xml" />
+                <copy tofile="target/dist/ec2-sshd.jar" file="target/ec2-sshd-${project.version}.jar" />
+
+                <zip destfile="target/ec2-sshd.zip">
+                  <fileset dir="target/dist" />
+                </zip>
+                <attachArtifact file="target/ec2-sshd.zip" classifier="bin" type="zip" />
+              </tasks>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jvnet.hudson</groupId>
+      <artifactId>sshd-core</artifactId>
+      <version>1.0-pre-hudson-1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.jcraft</groupId>
+      <artifactId>jzlib</artifactId>
+      <version>1.0.7</version>
+    </dependency>
+    <dependency>
+      <groupId>bouncycastle</groupId>
+      <artifactId>bcprov-jdk15</artifactId>
+      <version>140</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-jdk14</artifactId>
+      <version>1.5.3</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>m.g.o-public</id>
+      <url>http://maven.glassfish.org/content/groups/public/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>m.g.o-public</id>
+      <url>http://maven.glassfish.org/content/groups/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <licenses>
+    <license>
+      <name>MIT license</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <distributionManagement>
+    <site>
+      <id>ec2-sshd-www</id>
+      <url>java-net:/ec2-sshd/trunk/www/</url>
+    </site>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>java.net-maven2-repository</id>
+      <url>java-net:/maven2-repository/trunk/repository/</url>
+    </repository>
+  </distributionManagement>
+</project>

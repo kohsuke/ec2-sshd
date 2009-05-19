@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="ec2-sshd: Windows SSH daemon for EC2">
+  <skin>
+    <groupId>org.jvnet.maven-javanet-skin</groupId>
+    <artifactId>maven-javanet-skin</artifactId>
+    <version>1.0</version>
+  </skin>
+
+  <body>
+    <menu name="Windows SSH daemon for EC2">
+      <item name="Overview" href="index.html"/>
+      <item name="Download" href="http://maven.dyndns.org/2/org/jvnet/ec2-sshd/ec2-sshd/"/>
+
+      <item name="Mailing lists" href="servlets/ProjectMailingListList"/>
+      <item name="Source code" href="source/browse/trunk/ec2-sshd/"/>
+      <item name="Issues" href="servlets/ProjectIssues"/>
+    </menu>
+    ${reports}
+  </body>
+</project>

@@ -1,0 +1,22 @@
+What is this?
+
+  Windows AMIs on Amazon EC2 do not have a readily usable remote access technology (unlike their Unix counterparts),
+  and this makes it unnecessarily hard to utilize Windows instances programmatically (such as from
+  {{{https://hudson.dev.java.net/}Hudson}}.)
+
+  So this project develops a SSH daemon for EC2, which is capable of:
+
+  * Transfering files in both directions (via SCP)
+
+  * Launching processes on Windows (part of SSH)
+
+  * Authenticating inbound connections by using the key used to launch the instance.
+
+  []
+
+  While this daemon speaks the SSH protocol, this is not a real SSH daemon. Specifically,
+  it doesn't authenticate the user against as a Windows user, nor does it launch a new process
+  under a different user account (it always runs programs in the same user that runs the ec2-sshd itself.)
+
+   
+  
