@@ -7,11 +7,13 @@ import org.apache.sshd.common.util.Buffer;
 import org.apache.sshd.common.util.SecurityUtils;
 import org.apache.sshd.server.PublickeyAuthenticator;
 import org.apache.sshd.server.UserAuth;
+import org.apache.sshd.server.CommandFactory;
 import org.apache.sshd.server.auth.UserAuthPublicKey;
 import org.apache.sshd.server.command.ScpCommandFactory;
 import org.apache.sshd.server.keyprovider.PEMGeneratorHostKeyProvider;
 import org.apache.sshd.server.session.ServerSession;
 import org.apache.sshd.server.shell.ProcessShellFactory;
+import org.apache.sshd.server.shell.ProcessShellFactory.ProcessShell;
 import org.bouncycastle.util.encoders.Base64;
 
 import java.io.IOException;
@@ -35,15 +37,15 @@ public class Main {
         SshServer sshd = SshServer.setUpDefaultServer();
         sshd.setUserAuthFactories(Arrays.<NamedFactory<UserAuth>>asList(new UserAuthPublicKey.Factory()));
 
-        sshd.setPort(10022);
+        sshd.setPort(22);
 
         // TODO: perhaps we can compute the digest of the userdata and somehow turn it into the key?
         // for the Hudson master to be able to authenticate the EC2 instance (in the face of man-in-the-middle attack possibility),
         // we need the server to know some secret.
         sshd.setKeyPairProvider(new PEMGeneratorHostKeyProvider());     // for now, Hudson doesn't authenticate the EC2 instance.
 
-        sshd.setShellFactory(new ProcessShellFactory(new String[] { "cmd.exe", "/C" }));
-        sshd.setCommandFactory(new ScpCommandFactory());
+        sshd.setShellFactory(new ProcessShellFactory(new String[] {"cmd.exe"}));
+        sshd.setCommandFactory(new ScpCommandFactory(new CommandFactoryImpl()));
 
         // the client needs to possess the private key used for launching EC2 instance.
         // this enables us to authenticate the legitimate user.
@@ -73,4 +75,12 @@ public class Main {
     }
 
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
+
+    private static class CommandFactoryImpl implements CommandFactory {
+        public Command createCommand(String command) {
+            LOGGER.info("Forking "+command);
+            // TODO: quote handling
+            return new CommandImpl(new ProcessShell(command.split(" ")));
+        }
+    }
 }
