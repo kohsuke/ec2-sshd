@@ -1,15 +1,14 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jvnet.ec2-sshd</groupId>
   <artifactId>ec2-sshd</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>SSHD for EC2 Windows</name>
   <description>SSH daemon implementation for EC2 Windows instances</description>
 
   <scm>
-    <connection>scm:svn:https://svn.dev.java.net/svn/ec2-sshd/trunk/ec2-sshd/</connection>
-    <developerConnection>scm:svn:https://svn.dev.java.net/svn/ec2-sshd/trunk/ec2-sshd/</developerConnection>
+    <connection>scm:svn:https://svn.dev.java.net/svn/ec2-sshd/tags/ec2-sshd-1.0</connection>
+    <developerConnection>scm:svn:https://svn.dev.java.net/svn/ec2-sshd/tags/ec2-sshd-1.0</developerConnection>
   </scm>
 
   <build>
@@ -85,8 +84,7 @@
                 <copy todir="target/dist/lib">
                   <fileset dir="target/dependency" includes="*.jar" />
                 </copy>
-                <resolveArtifact groupId="com.sun.winsw" artifactId="winsw" version="1.6" classifier="bin" type="exe"
-                                 tofile="target/dist/ec2-sshd.exe" />
+                <resolveArtifact groupId="com.sun.winsw" artifactId="winsw" version="1.6" classifier="bin" type="exe" tofile="target/dist/ec2-sshd.exe" />
                 <copy todir="target/dist" file="src/ec2-sshd.xml" />
                 <copy tofile="target/dist/ec2-sshd.jar" file="target/ec2-sshd-${project.version}.jar" />
 
