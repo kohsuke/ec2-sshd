@@ -7,13 +7,11 @@ import org.apache.sshd.common.util.Buffer;
 import org.apache.sshd.common.util.SecurityUtils;
 import org.apache.sshd.server.PublickeyAuthenticator;
 import org.apache.sshd.server.UserAuth;
-import org.apache.sshd.server.CommandFactory;
 import org.apache.sshd.server.auth.UserAuthPublicKey;
 import org.apache.sshd.server.command.ScpCommandFactory;
 import org.apache.sshd.server.keyprovider.PEMGeneratorHostKeyProvider;
 import org.apache.sshd.server.session.ServerSession;
 import org.apache.sshd.server.shell.ProcessShellFactory;
-import org.apache.sshd.server.shell.ProcessShellFactory.ProcessShell;
 import org.bouncycastle.util.encoders.Base64;
 
 import java.io.IOException;
@@ -32,7 +30,7 @@ import java.util.logging.Logger;
  */
 public class Main {
     public static void main(String[] args) throws Exception {
-        SecurityUtils.setRegisterBouncyCastle(true);
+        SecurityUtils.setRegisterBouncyCastle(true); // really make sure we have Bouncy Castle, or else die.
 
         SshServer sshd = SshServer.setUpDefaultServer();
         sshd.setUserAuthFactories(Arrays.<NamedFactory<UserAuth>>asList(new UserAuthPublicKey.Factory()));
@@ -42,7 +40,7 @@ public class Main {
         // TODO: perhaps we can compute the digest of the userdata and somehow turn it into the key?
         // for the Hudson master to be able to authenticate the EC2 instance (in the face of man-in-the-middle attack possibility),
         // we need the server to know some secret.
-        sshd.setKeyPairProvider(new PEMGeneratorHostKeyProvider());     // for now, Hudson doesn't authenticate the EC2 instance.
+        sshd.setKeyPairProvider(new KeyPairProviderImpl());     // for now, Hudson doesn't authenticate the EC2 instance.
 
         sshd.setShellFactory(new ProcessShellFactory(new String[] {"cmd.exe"}));
         sshd.setCommandFactory(new ScpCommandFactory(new CommandFactoryImpl()));
@@ -76,11 +74,4 @@ public class Main {
 
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
-    private static class CommandFactoryImpl implements CommandFactory {
-        public Command createCommand(String command) {
-            LOGGER.info("Forking "+command);
-            // TODO: quote handling
-            return new CommandImpl(new ProcessShell(command.split(" ")));
-        }
-    }
 }

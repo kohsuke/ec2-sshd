@@ -8,9 +8,11 @@ import org.apache.sshd.server.CommandFactory.ExitCallback;
 import java.io.IOException;
 
 /**
+ * {@link Command} implementation for {@link CommandFactoryImpl}.
+ *
  * @author Kohsuke Kawaguchi
  */
-public class CommandImpl extends InvertedShellWrapper implements Command {
+final class CommandImpl extends InvertedShellWrapper implements Command {
     public CommandImpl(InvertedShell shell) {
         super(shell);
     }
