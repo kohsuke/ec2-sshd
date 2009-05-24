@@ -133,6 +133,12 @@
       <artifactId>slf4j-jdk14</artifactId>
       <version>1.5.3</version>
     </dependency>
+    <dependency>
+      <groupId>org.jvnet.hudson</groupId>
+      <artifactId>trilead-ssh2</artifactId>
+      <version>build212-hudson-2</version>
+      <scope>test</scope>
+    </dependency>    
   </dependencies>
 
   <repositories>

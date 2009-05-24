@@ -3,6 +3,9 @@ package org.jvnet.ec2sshd;
 import org.apache.commons.io.IOUtils;
 import org.apache.sshd.SshServer;
 import org.apache.sshd.common.NamedFactory;
+import org.apache.sshd.common.cipher.AES128CBC;
+import org.apache.sshd.common.cipher.TripleDESCBC;
+import org.apache.sshd.common.cipher.BlowfishCBC;
 import org.apache.sshd.common.util.Buffer;
 import org.apache.sshd.common.util.SecurityUtils;
 import org.apache.sshd.server.PublickeyAuthenticator;
@@ -34,6 +37,10 @@ public class Main {
 
         SshServer sshd = SshServer.setUpDefaultServer();
         sshd.setUserAuthFactories(Arrays.<NamedFactory<UserAuth>>asList(new UserAuthPublicKey.Factory()));
+        sshd.setCipherFactories(Arrays.asList(// AES 256 and 192 requires unlimited crypto, so don't use that
+                new AES128CBC.Factory(),
+                new TripleDESCBC.Factory(),
+                new BlowfishCBC.Factory()));
 
         sshd.setPort(22);
 
