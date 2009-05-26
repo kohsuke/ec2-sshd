@@ -2,13 +2,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jvnet.ec2-sshd</groupId>
   <artifactId>ec2-sshd</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.1</version>
   <name>SSHD for EC2 Windows</name>
   <description>SSH daemon implementation for EC2 Windows instances</description>
 
   <scm>
-    <connection>scm:svn:https://svn.dev.java.net/svn/ec2-sshd/trunk/ec2-sshd/</connection>
-    <developerConnection>scm:svn:https://svn.dev.java.net/svn/ec2-sshd/trunk/ec2-sshd/</developerConnection>
+    <connection>scm:svn:https://svn.dev.java.net/svn/ec2-sshd/tags/ec2-sshd-1.1</connection>
+    <developerConnection>scm:svn:https://svn.dev.java.net/svn/ec2-sshd/tags/ec2-sshd-1.1</developerConnection>
   </scm>
 
   <build>
