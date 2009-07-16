@@ -14,7 +14,7 @@ class CommandFactoryImpl implements CommandFactory {
     public Command createCommand(String command) {
         LOGGER.info("Forking "+command);
         // TODO: proper quote handling
-        return new CommandImpl(new ProcessShell(command.split(" ")));
+        return new CommandImpl(new ProcessBuilder(command.split(" ")));
     }
 
     private static final Logger LOGGER = Logger.getLogger(CommandFactoryImpl.class.getName());

@@ -111,7 +111,7 @@
     <dependency>
       <groupId>org.jvnet.hudson</groupId>
       <artifactId>sshd-core</artifactId>
-      <version>1.0-pre-hudson-1</version>
+      <version>1.0-hudson-2</version>
     </dependency>
     <dependency>
       <groupId>com.jcraft</groupId>
@@ -138,7 +138,12 @@
       <artifactId>trilead-ssh2</artifactId>
       <version>build212-hudson-2</version>
       <scope>test</scope>
-    </dependency>    
+    </dependency>
+    <dependency>
+      <groupId>args4j</groupId>
+      <artifactId>args4j</artifactId>
+      <version>2.0.13</version>
+    </dependency>
   </dependencies>
 
   <repositories>
