@@ -17,7 +17,7 @@ under a different user account (it always runs programs in the same user that ru
 # Installation
 
 * [Install a JRE](http://java.com/) on your Windows AMI
-* Download `ec2-sshd-*-bin.zip` from [Maven repository](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.jvnet.ec2-sshd%22%20AND%20a%3A%22ec2-sshd%22)
+* Download `ec2-sshd-*-bin.zip` from [Maven repository](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kohsuke%22%20AND%20a%3A%22ec2-sshd%22)
 and extract it somewhere. Because of the tightened security setting on EC2 Windows AMIs, attempt to extract
 this zip file will fail, unless you open the property dialog of the file and click "Unblock".
 See the screenshot below for how to do this.
