@@ -5,6 +5,8 @@ import org.bouncycastle.openssl.PEMReader;
 
 import java.security.KeyPair;
 import static java.util.logging.Level.SEVERE;
+
+import java.util.Collections;
 import java.util.logging.Logger;
 import java.io.InputStreamReader;
 
@@ -33,16 +35,16 @@ import java.io.InputStreamReader;
  */
 final class KeyPairProviderImpl extends AbstractKeyPairProvider {
     @Override
-    protected KeyPair[] loadKeys() {
+    public Iterable<KeyPair> loadKeys() {
         try {
             PEMReader r = new PEMReader(new InputStreamReader(getClass().getResourceAsStream("hostkey.pem")));
             Object o = r.readObject();
             if (o instanceof KeyPair)
-                return new KeyPair[]{(KeyPair)o};
+                return Collections.singleton((KeyPair)o);
         } catch (Exception e) {
             LOGGER.log(SEVERE,"Failed to load the host key",e);
         }
-        return new KeyPair[0];
+        return Collections.emptyList();
     }
 
     private static final Logger LOGGER = Logger.getLogger(KeyPairProviderImpl.class.getName());

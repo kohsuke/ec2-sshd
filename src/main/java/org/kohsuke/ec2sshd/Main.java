@@ -81,7 +81,7 @@ public class Main {
         // the client needs to possess the private key used for launching EC2 instance.
         // this enables us to authenticate the legitimate user.
         sshd.setPublickeyAuthenticator(new PublickeyAuthenticator() {
-            public boolean hasKey(String username, PublicKey key, ServerSession session) {
+            public boolean authenticate(String s, PublicKey publicKey, ServerSession serverSession) {
                 return key.equals(master);
             }
         });

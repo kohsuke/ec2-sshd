@@ -1,5 +1,6 @@
 package org.kohsuke.ec2sshd;
 
+import org.apache.sshd.server.Command;
 import org.apache.sshd.server.CommandFactory;
 
 import java.util.logging.Logger;

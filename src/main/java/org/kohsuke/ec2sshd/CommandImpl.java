@@ -1,7 +1,8 @@
 package org.kohsuke.ec2sshd;
 
-import org.apache.sshd.server.CommandFactory.Command;
-import org.apache.sshd.server.CommandFactory.ExitCallback;
+import org.apache.sshd.server.Command;
+import org.apache.sshd.server.Environment;
+import org.apache.sshd.server.ExitCallback;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,6 +22,7 @@ final class CommandImpl implements Command {
     private InputStream in;
     private OutputStream out,err;
     private ExitCallback callback;
+    private Process proc;
 
     CommandImpl(ProcessBuilder processBuilder) {
         this.processBuilder = processBuilder;
@@ -30,9 +32,9 @@ final class CommandImpl implements Command {
         this.callback = callback;
     }
 
-    public void start() throws IOException {
-        final Process proc = processBuilder.start();
-        final Thread p1 = new PumpThread("stdin", in,proc.getOutputStream());
+    public void start(Environment environment) throws IOException {
+        proc = processBuilder.start();
+        final Thread p1 = new PumpThread("stdin", in, proc.getOutputStream());
         final Thread p2 = new PumpThread("stdout", proc.getInputStream(),out);
         final Thread p3 = new PumpThread("stderr", proc.getErrorStream(),err);
         p1.start();
@@ -57,6 +59,10 @@ final class CommandImpl implements Command {
         }.start();
     }
 
+    public void destroy() {
+        if (proc!=null)
+            proc.destroy();
+    }
 
     public void setInputStream(InputStream in) {
         this.in = in;
