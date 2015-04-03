@@ -1,0 +1,544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+<html>
+  <head>
+    <title>ec2-sshd: Windows SSH daemon for EC2 - Project Dependencies</title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      </head>
+  <body class="composite">
+    <!-- TODO: move this into JavaScript to patch the skin
+      <div class="xright">  </div>
+    -->
+    <div id="leftColumn">
+      <div id="navcolumn">
+             <dl class=navgroup>
+        <dt>Windows SSH daemon for EC2</dt>
+        <dd><ul>
+              
+    <li class="none">
+              <a href="index.html">Overview</a>
+        </li>
+              
+    <li class="none">
+              <a href="http://maven.dyndns.org/2/org/jvnet/ec2-sshd/ec2-sshd/">Download</a>
+        </li>
+              
+    <li class="none">
+              <a href="servlets/ProjectMailingListList">Mailing lists</a>
+        </li>
+              
+    <li class="none">
+              <a href="source/browse/trunk/ec2-sshd/">Source code</a>
+        </li>
+              
+    <li class="none">
+              <a href="servlets/ProjectIssues">Issues</a>
+        </li>
+          </ul></dd>
+    </dl>
+      <dl class=navgroup>
+        <dt>Project Documentation</dt>
+        <dd><ul>
+              
+                
+              
+            
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+            <li class="expanded">
+              <a href="project-info.html">Project Information</a>
+                <ul>
+                  
+    <li class="none">
+              <strong>Dependencies</strong>
+        </li>
+                  
+    <li class="none">
+              <a href="dependency-convergence.html">Dependency Convergence</a>
+        </li>
+                  
+    <li class="none">
+              <a href="dependency-info.html">Dependency Information</a>
+        </li>
+                  
+    <li class="none">
+              <a href="distribution-management.html">Distribution Management</a>
+        </li>
+                  
+    <li class="none">
+              <a href="index.html">About</a>
+        </li>
+                  
+    <li class="none">
+              <a href="license.html">Project License</a>
+        </li>
+                  
+    <li class="none">
+              <a href="plugin-management.html">Plugin Management</a>
+        </li>
+                  
+    <li class="none">
+              <a href="plugins.html">Project Plugins</a>
+        </li>
+                  
+    <li class="none">
+              <a href="team-list.html">Project Team</a>
+        </li>
+                  
+    <li class="none">
+              <a href="source-repository.html">Source Repository</a>
+        </li>
+                  
+    <li class="none">
+              <a href="project-summary.html">Project Summary</a>
+        </li>
+              </ul>
+        </li>
+              
+                
+              
+      
+            
+      
+              
+        <li class="collapsed">
+              <a href="project-reports.html">Project Reports</a>
+              </li>
+          </ul></dd>
+    </dl>
+        </div>
+      <script>
+        // replace the java.net project tools with the navigation bar from Maven.
+        // also get rid of "Get Involved" thingie too, while we are at it
+        var pt = document.getElementById("projecttools");
+        var nv = document.getElementById("navcolumn");
+        
+        while(pt.previousSibling!=null)
+          pt.parentNode.removeChild(pt.previousSibling);
+        
+        pt.parentNode.insertBefore(nv,pt);
+        pt.parentNode.removeChild(pt);
+      </script>
+      <script>
+        // kill "description" h3 bar
+        var ld = document.getElementById("longdescription");
+        if(ld!=null) {
+          for( n=ld.firstChild; n!=null; n=n.nextSibling ) {
+            if(n.nodeType==1 && n.innerHTML=="Description" ) {
+              n.parentNode.removeChild(n);
+              break;
+            }
+          }
+        }
+      </script>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <a name="Project_Dependencies"></a>
+<div class="section">
+<h2>Project Dependencies<a name="Project_Dependencies"></a></h2><a name="Project_Dependencies_compile"></a>
+<div class="section">
+<h3>compile<a name="compile"></a></h3>
+<p>The following is a list of compile dependencies for this project. These dependencies are required to compile and run the application:</p>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>GroupId</th>
+<th>ArtifactId</th>
+<th>Version</th>
+<th>Type</th>
+<th>License</th></tr>
+<tr class="b">
+<td>args4j</td>
+<td><a class="externalLink" href="http://args4j.kohsuke.org/args4j/">args4j</a></td>
+<td>2.0.26</td>
+<td>jar</td>
+<td><a class="externalLink" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></td></tr>
+<tr class="a">
+<td>bouncycastle</td>
+<td><a class="externalLink" href="http://www.bouncycastle.org/java.html">bcprov-jdk15</a></td>
+<td>140</td>
+<td>jar</td>
+<td><a class="externalLink" href="http://www.bouncycastle.org/licence.html">Bouncy Castle License</a></td></tr>
+<tr class="b">
+<td>com.jcraft</td>
+<td><a class="externalLink" href="http://www.jcraft.com/jzlib/">jzlib</a></td>
+<td>1.0.7</td>
+<td>jar</td>
+<td><a class="externalLink" href="http://www.jcraft.com/jzlib/LICENSE.txt">BSD</a></td></tr>
+<tr class="a">
+<td>commons-io</td>
+<td><a class="externalLink" href="http://commons.apache.org/io/">commons-io</a></td>
+<td>1.4</td>
+<td>jar</td>
+<td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td></tr>
+<tr class="b">
+<td>org.apache.sshd</td>
+<td><a class="externalLink" href="http://www.apache.org/sshd/sshd-core/">sshd-core</a></td>
+<td>0.14.0</td>
+<td>jar</td>
+<td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a></td></tr>
+<tr class="a">
+<td>org.slf4j</td>
+<td><a class="externalLink" href="http://www.slf4j.org">slf4j-jdk14</a></td>
+<td>1.5.3</td>
+<td>jar</td>
+<td>-</td></tr></table></div><a name="Project_Dependencies_test"></a>
+<div class="section">
+<h3>test<a name="test"></a></h3>
+<p>The following is a list of test dependencies for this project. These dependencies are only required to compile and run unit tests for the application:</p>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>GroupId</th>
+<th>ArtifactId</th>
+<th>Version</th>
+<th>Type</th>
+<th>License</th></tr>
+<tr class="b">
+<td>org.jvnet.hudson</td>
+<td><a class="externalLink" href="http://www.ganymed.ethz.ch/ssh2/">trilead-ssh2</a></td>
+<td>build212-hudson-2</td>
+<td>jar</td>
+<td><a class="externalLink" href="http://www.ganymed.ethz.ch/ssh2/LICENSE.txt">BSD style license</a></td></tr></table></div></div><a name="Project_Transitive_Dependencies"></a>
+<div class="section">
+<h2>Project Transitive Dependencies<a name="Project_Transitive_Dependencies"></a></h2>
+<p>The following is a list of transitive dependencies for this project. Transitive dependencies are the dependencies of the project dependencies.</p><a name="Project_Transitive_Dependencies_compile"></a>
+<div class="section">
+<h3>compile<a name="compile"></a></h3>
+<p>The following is a list of compile dependencies for this project. These dependencies are required to compile and run the application:</p>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>GroupId</th>
+<th>ArtifactId</th>
+<th>Version</th>
+<th>Type</th>
+<th>License</th></tr>
+<tr class="b">
+<td>org.slf4j</td>
+<td><a class="externalLink" href="http://www.slf4j.org">slf4j-api</a></td>
+<td>1.6.4</td>
+<td>jar</td>
+<td><a class="externalLink" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></td></tr></table></div></div><a name="Project_Dependency_Graph"></a>
+<div class="section">
+<h2>Project Dependency Graph<a name="Project_Dependency_Graph"></a></h2><script language="javascript" type="text/javascript">
+      function toggleDependencyDetail( divId, imgId )
+      {
+        var div = document.getElementById( divId );
+        var img = document.getElementById( imgId );
+        if( div.style.display == '' )
+        {
+          div.style.display = 'none';
+          img.src='./images/icon_info_sml.gif';
+        }
+        else
+        {
+          div.style.display = '';
+          img.src='./images/close.gif';
+        }
+      }
+</script>
+<a name="Dependency_Tree"></a>
+<div class="section">
+<h3>Dependency Tree<a name="Dependency_Tree"></a></h3>
+<ul>
+<li>org.kohsuke:ec2-sshd:jar:1.3 <img id="_img1" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep0', '_img1' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep0" style="display:none">
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>SSHD for EC2 Windows</th></tr>
+<tr class="b">
+<td>
+<p><b>Description: </b>SSH daemon implementation for EC2 Windows instances</p>
+<p><b>URL: </b><a class="externalLink" href="http://kohsuke.org/ec2-sshd/">http://kohsuke.org/ec2-sshd/</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://www.opensource.org/licenses/mit-license.php">MIT license</a></p></td></tr></table></div>
+<ul>
+<li>org.apache.sshd:sshd-core:jar:0.14.0 (compile) <img id="_img3" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep2', '_img3' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep2" style="display:none">
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Apache Mina SSHD :: Core</th></tr>
+<tr class="b">
+<td>
+<p><b>Description: </b>The Apache Software Foundation provides support for the Apache community of open-source software projects.
+    The Apache projects are characterized by a collaborative, consensus based development process, an open and
+    pragmatic software license, and a desire to create high quality software that leads the way in its field.
+    We consider ourselves not simply a group of projects sharing a server, but rather a community of developers
+    and users.</p>
+<p><b>URL: </b><a class="externalLink" href="http://www.apache.org/sshd/sshd-core/">http://www.apache.org/sshd/sshd-core/</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a></p></td></tr></table></div>
+<ul>
+<li>org.slf4j:slf4j-api:jar:1.6.4 (compile) <img id="_img5" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep4', '_img5' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep4" style="display:none">
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>SLF4J API Module</th></tr>
+<tr class="b">
+<td>
+<p><b>Description: </b>The slf4j API</p>
+<p><b>URL: </b><a class="externalLink" href="http://www.slf4j.org">http://www.slf4j.org</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></p></td></tr></table></div></li></ul></li>
+<li>com.jcraft:jzlib:jar:1.0.7 (compile) <img id="_img7" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep6', '_img7' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep6" style="display:none">
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>JZlib</th></tr>
+<tr class="b">
+<td>
+<p><b>Description: </b>JZlib is a re-implementation of zlib in pure Java</p>
+<p><b>URL: </b><a class="externalLink" href="http://www.jcraft.com/jzlib/">http://www.jcraft.com/jzlib/</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://www.jcraft.com/jzlib/LICENSE.txt">BSD</a></p></td></tr></table></div></li>
+<li>bouncycastle:bcprov-jdk15:jar:140 (compile) <img id="_img9" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep8', '_img9' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep8" style="display:none">
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Legion of the Bouncy Castle Java Cryptography APIs</th></tr>
+<tr class="b">
+<td>
+<p><b>Description: </b>The Bouncy Castle Crypto package is a Java implementation of cryptographic algorithms. The package is organised
+		so that it contains a light-weight API suitable for use in any environment (including the newly released J2ME) 
+		with the additional infrastructure to conform the algorithms to the JCE framework.</p>
+<p><b>URL: </b><a class="externalLink" href="http://www.bouncycastle.org/java.html">http://www.bouncycastle.org/java.html</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://www.bouncycastle.org/licence.html">Bouncy Castle License</a></p></td></tr></table></div></li>
+<li>commons-io:commons-io:jar:1.4 (compile) <img id="_img11" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep10', '_img11' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep10" style="display:none">
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Commons IO</th></tr>
+<tr class="b">
+<td>
+<p><b>Description: </b>Commons-IO contains utility classes, stream implementations, file filters, file comparators and endian classes.</p>
+<p><b>URL: </b><a class="externalLink" href="http://commons.apache.org/io/">http://commons.apache.org/io/</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td></tr></table></div></li>
+<li>org.slf4j:slf4j-jdk14:jar:1.5.3 (compile) <img id="_img13" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep12', '_img13' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep12" style="display:none">
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>SLF4J JDK14 Binding</th></tr>
+<tr class="b">
+<td>
+<p><b>Description: </b>The slf4j JDK14 binding</p>
+<p><b>URL: </b><a class="externalLink" href="http://www.slf4j.org">http://www.slf4j.org</a></p>
+<p><b>Project License: </b>No license is defined for this project.</p></td></tr></table></div></li>
+<li>org.jvnet.hudson:trilead-ssh2:jar:build212-hudson-2 (test) <img id="_img15" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep14', '_img15' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep14" style="display:none">
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Ganymed SSH2 for Java</th></tr>
+<tr class="b">
+<td>
+<p><b>Description: </b>Ganymed SSH2 for Java is a library which implements the SSH-2 protocol in pure Java</p>
+<p><b>URL: </b><a class="externalLink" href="http://www.ganymed.ethz.ch/ssh2/">http://www.ganymed.ethz.ch/ssh2/</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://www.ganymed.ethz.ch/ssh2/LICENSE.txt">BSD style license</a></p></td></tr></table></div></li>
+<li>args4j:args4j:jar:2.0.26 (compile) <img id="_img17" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep16', '_img17' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep16" style="display:none">
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>args4j</th></tr>
+<tr class="b">
+<td>
+<p><b>Description: </b>args4j : Java command line arguments parser</p>
+<p><b>URL: </b><a class="externalLink" href="http://args4j.kohsuke.org/args4j/">http://args4j.kohsuke.org/args4j/</a></p>
+<p><b>Project License: </b><a class="externalLink" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></p></td></tr></table></div></li></ul></li></ul></div></div><a name="Licenses"></a>
+<div class="section">
+<h2>Licenses<a name="Licenses"></a></h2>
+<p><b>Bouncy Castle License: </b>Legion of the Bouncy Castle Java Cryptography APIs</p>
+<p><b>MIT license: </b>SSHD for EC2 Windows</p>
+<p><b>Unknown: </b>SLF4J JDK14 Binding</p>
+<p><b>BSD style license: </b>Ganymed SSH2 for Java</p>
+<p><b>BSD: </b>JZlib</p>
+<p><b>The Apache Software License, Version 2.0: </b>Commons IO</p>
+<p><b>MIT License: </b>SLF4J API Module, args4j</p>
+<p><b>Apache 2.0 License: </b>Apache Mina SSHD :: Core</p></div><a name="Dependency_File_Details"></a>
+<div class="section">
+<h2>Dependency File Details<a name="Dependency_File_Details"></a></h2>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Filename</th>
+<th>Size</th>
+<th>Entries</th>
+<th>Classes</th>
+<th>Packages</th>
+<th>Java Version</th>
+<th title="Indicates whether these dependencies have been compiled with debug information.">Debug Information</th></tr>
+<tr class="b">
+<td>args4j-2.0.26.jar</td>
+<td>74.70 kB</td>
+<td>81</td>
+<td>64</td>
+<td>2</td>
+<td>1.5</td>
+<td>Yes</td></tr>
+<tr class="a">
+<td>bcprov-jdk15-140.jar</td>
+<td>1.59 MB</td>
+<td>1389</td>
+<td>1308</td>
+<td>73</td>
+<td>1.5</td>
+<td>No</td></tr>
+<tr class="b">
+<td>jzlib-1.0.7.jar</td>
+<td>48.52 kB</td>
+<td>24</td>
+<td>14</td>
+<td>1</td>
+<td>1.1</td>
+<td>Yes</td></tr>
+<tr class="a">
+<td>commons-io-1.4.jar</td>
+<td>109.04 kB</td>
+<td>93</td>
+<td>76</td>
+<td>5</td>
+<td>1.3</td>
+<td>Yes</td></tr>
+<tr class="b">
+<td>sshd-core-0.14.0.jar</td>
+<td>668.68 kB</td>
+<td>581</td>
+<td>516</td>
+<td>49</td>
+<td>1.5</td>
+<td>Yes</td></tr>
+<tr class="a">
+<td>trilead-ssh2-build212-hudson-2.jar</td>
+<td>248.01 kB</td>
+<td>161</td>
+<td>139</td>
+<td>13</td>
+<td>1.1</td>
+<td>Yes</td></tr>
+<tr class="b">
+<td>slf4j-api-1.6.4.jar</td>
+<td>25.96 kB</td>
+<td>34</td>
+<td>23</td>
+<td>3</td>
+<td>1.3</td>
+<td>Yes</td></tr>
+<tr class="a">
+<td>slf4j-jdk14-1.5.3.jar</td>
+<td>8.74 kB</td>
+<td>15</td>
+<td>5</td>
+<td>1</td>
+<td>1.4</td>
+<td>Yes</td></tr>
+<tr class="b">
+<th>Total</th>
+<th>Size</th>
+<th>Entries</th>
+<th>Classes</th>
+<th>Packages</th>
+<th>Java Version</th>
+<th>Debug Information</th></tr>
+<tr class="a">
+<td>8</td>
+<td>2.78 MB</td>
+<td>2378</td>
+<td>2145</td>
+<td>147</td>
+<td>1.5</td>
+<td>7</td></tr>
+<tr class="b">
+<td>compile: 7</td>
+<td>compile: 2.53 MB</td>
+<td>compile: 2217</td>
+<td>compile: 2006</td>
+<td>compile: 134</td>
+<td>-</td>
+<td>compile: 6</td></tr>
+<tr class="a">
+<td>test: 1</td>
+<td>test: 248.01 kB</td>
+<td>test: 161</td>
+<td>test: 139</td>
+<td>test: 13</td>
+<td>-</td>
+<td>test: 1</td></tr></table></div><a name="Dependency_Repository_Locations"></a>
+<div class="section">
+<h2>Dependency Repository Locations<a name="Dependency_Repository_Locations"></a></h2>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Repo ID</th>
+<th>URL</th>
+<th>Release</th>
+<th>Snapshot</th>
+<th>Blacklisted</th></tr>
+<tr class="b">
+<td>central</td>
+<td><a class="externalLink" href="http://repo.maven.apache.org/maven2">http://repo.maven.apache.org/maven2</a></td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td></tr></table>
+<p>Repository locations for each of the Dependencies.</p>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Artifact</th></tr>
+<tr class="b">
+<td>args4j:args4j:jar:2.0.26</td></tr>
+<tr class="a">
+<td>bouncycastle:bcprov-jdk15:jar:140</td></tr>
+<tr class="b">
+<td>com.jcraft:jzlib:jar:1.0.7</td></tr>
+<tr class="a">
+<td>commons-io:commons-io:jar:1.4</td></tr>
+<tr class="b">
+<td>org.apache.sshd:sshd-core:jar:0.14.0</td></tr>
+<tr class="a">
+<td>org.jvnet.hudson:trilead-ssh2:jar:build212-hudson-2</td></tr>
+<tr class="b">
+<td>org.slf4j:slf4j-api:jar:1.6.4</td></tr>
+<tr class="a">
+<td>org.slf4j:slf4j-jdk14:jar:1.5.3</td></tr>
+<tr class="b">
+<th>Total</th></tr>
+<tr class="a">
+<td>8 (compile: 7, test: 1)</td></tr></table></div>
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2015
+    
+          
+  
+
+  
+  
+  &nbsp;| Last Published: 2015-04-02
+  &nbsp;| Version: 1.3
+</div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>
