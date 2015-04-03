@@ -84,7 +84,7 @@
                 <copy todir="target/dist/lib">
                   <fileset dir="target/dependency" includes="*.jar" />
                 </copy>
-                <resolveArtifact groupId="com.sun.winsw" artifactId="winsw" version="1.6" classifier="bin" type="exe" tofile="target/dist/ec2-sshd.exe" />
+                <resolveArtifact groupId="com.sun.winsw" artifactId="winsw" version="1.17" classifier="bin" type="exe" tofile="target/dist/ec2-sshd.exe" />
                 <copy todir="target/dist" file="src/ec2-sshd.xml" />
                 <copy tofile="target/dist/ec2-sshd.jar" file="target/ec2-sshd-${project.version}.jar" />
 
