@@ -1,4 +1,4 @@
-package org.jvnet.ec2sshd;
+package org.kohsuke.ec2sshd;
 
 import org.apache.sshd.server.CommandFactory.Command;
 import org.apache.sshd.server.CommandFactory.ExitCallback;

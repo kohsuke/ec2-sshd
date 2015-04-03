@@ -1,4 +1,4 @@
-package org.jvnet.ec2sshd;
+package org.kohsuke.ec2sshd;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.sshd.SshServer;
@@ -12,7 +12,6 @@ import org.apache.sshd.server.PublickeyAuthenticator;
 import org.apache.sshd.server.UserAuth;
 import org.apache.sshd.server.auth.UserAuthPublicKey;
 import org.apache.sshd.server.command.ScpCommandFactory;
-import org.apache.sshd.server.keyprovider.PEMGeneratorHostKeyProvider;
 import org.apache.sshd.server.session.ServerSession;
 import org.apache.sshd.server.shell.ProcessShellFactory;
 import org.bouncycastle.util.encoders.Base64;

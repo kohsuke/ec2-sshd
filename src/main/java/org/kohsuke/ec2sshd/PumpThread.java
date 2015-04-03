@@ -1,4 +1,4 @@
-package org.jvnet.ec2sshd;
+package org.kohsuke.ec2sshd;
 
 import java.io.IOException;
 import java.io.InputStream;

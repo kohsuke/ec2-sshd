@@ -32,7 +32,7 @@
               <descriptorId>jar-with-dependencies</descriptorId>
               <archive>
                 <manifest>
-                  <mainClass>org.jvnet.ec2sshd.Main</mainClass>
+                  <mainClass>org.kohsuke.ec2sshd.Main</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -44,7 +44,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>org.jvnet.ec2sshd.Main</mainClass>
+              <mainClass>org.kohsuke.ec2sshd.Main</mainClass>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib</classpathPrefix>
             </manifest>

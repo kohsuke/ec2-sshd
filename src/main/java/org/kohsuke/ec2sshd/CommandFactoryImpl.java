@@ -1,7 +1,6 @@
-package org.jvnet.ec2sshd;
+package org.kohsuke.ec2sshd;
 
 import org.apache.sshd.server.CommandFactory;
-import org.apache.sshd.server.shell.ProcessShellFactory.ProcessShell;
 
 import java.util.logging.Logger;
 
