@@ -38,11 +38,11 @@ service will be running upon the boot.
 and you need to use the same private key that you used for launching AMI. This is how it authenticates you.
 * The daemon implements SCP on its own, so you can use that to send/receive files. For example, try this:
 ```
-    scp -i ~/my-ec2-privatekey /some/local/file 'ec2-67-202-51-223.compute-1.amazonaws.com:c://test.txt'
+scp -i ~/my-ec2-privatekey /some/local/file $EC2HOST:c:/test.txt
 ```
-* The daemon can fork execute processes. For example, try this: 
+* The daemon can fork and execute processes. For example, try this:
 ```
-ssh -i ~/my-ec2-privatekey ec2-67-202-51-223.compute-1.amazonaws.com java -fullversion
+ssh -i ~/my-ec2-privatekey $EC2HOST java -fullversion
 ```
 * If you run ssh without specifying any command, it starts `cmd.exe`, but don't expect this to really work,
 because there's no terminal support.
